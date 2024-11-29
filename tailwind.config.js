@@ -13,7 +13,8 @@ export default {
         raleway: ["Raleway", "sans-serif"]
       },
       backgroundImage: {
-        navBg: "url('./assets/navBg.jpg')"
+        navBg: "url('./assets/navBg.jpg')",
+        banner: "url('./assets/banner.png')"
       }
     },
   },
