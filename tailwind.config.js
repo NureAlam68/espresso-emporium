@@ -14,8 +14,12 @@ export default {
       },
       backgroundImage: {
         navBg: "url('./assets/navBg.jpg')",
-        banner: "url('./assets/banner.png')"
-      }
+        banner: "url('./assets/banner.png')",
+        footerBg: "url('./assets/footerBg.jpg')"
+      },
+      colors: {
+        primary: "#331A15",
+      },
     },
   },
   plugins: [daisyui],
