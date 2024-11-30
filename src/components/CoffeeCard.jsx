@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { IoEyeSharp } from "react-icons/io5";
 import { MdDelete, MdModeEditOutline } from "react-icons/md";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -54,7 +55,9 @@ const CoffeeCard = ({coffee, coffees, setCoffees}) => {
             </div>
             <div className="text-white grid grid-cols-3 md:grid-cols-1 gap-4">
                 <button className="bg-[#D2B48C] p-3 rounded-[5px]"><IoEyeSharp className="text-2xl"/></button>
+                <Link to={`/updateCoffee/${_id}`}>
                 <button className="bg-[#3C393B] p-3 rounded-[5px]"><MdModeEditOutline className="text-2xl"/></button>
+                </Link>
                 <button onClick={() => handleDelete(_id)} className="bg-[#EA4744] p-3 rounded-[5px]"><MdDelete className="text-2xl"/></button>
             </div>
         </div>
