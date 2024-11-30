@@ -54,7 +54,7 @@ const CoffeeCard = ({coffee, coffees, setCoffees}) => {
                 <p className="mt-2"><span className="font-semibold">Price: </span><span>{price} Taka</span></p>
             </div>
             <div className="text-white grid grid-cols-3 md:grid-cols-1 gap-4">
-                <button className="bg-[#D2B48C] p-3 rounded-[5px]"><IoEyeSharp className="text-2xl"/></button>
+                <Link to={`/coffeeDetails/${_id}`}><button className="bg-[#D2B48C] p-3 rounded-[5px]"><IoEyeSharp className="text-2xl"/></button></Link>
                 <Link to={`/updateCoffee/${_id}`}>
                 <button className="bg-[#3C393B] p-3 rounded-[5px]"><MdModeEditOutline className="text-2xl"/></button>
                 </Link>
