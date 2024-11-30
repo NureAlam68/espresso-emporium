@@ -32,7 +32,7 @@ const PopularProduct = () => {
         </div>
         <div className="mt-[48px] grid lg:grid-cols-2 gap-6">
           {
-            coffees.map(coffee => <CoffeeCard key={coffee._id} coffee={coffee}></CoffeeCard>)
+            coffees.map(coffee => <CoffeeCard key={coffee._id} coffees={coffees} setCoffees={setCoffees} coffee={coffee}></CoffeeCard>)
           }
         </div>
       </div>
