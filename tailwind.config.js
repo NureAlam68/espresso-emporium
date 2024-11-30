@@ -15,7 +15,9 @@ export default {
       backgroundImage: {
         navBg: "url('./assets/navBg.jpg')",
         banner: "url('./assets/banner.png')",
-        footerBg: "url('./assets/footerBg.jpg')"
+        footerBg: "url('./assets/footerBg.jpg')",
+        popularBg: "url('./assets/popularBg.png')",
+        addCoffeeBg: "url('./assets/addCoffee.png')"
       },
       colors: {
         primary: "#331A15",

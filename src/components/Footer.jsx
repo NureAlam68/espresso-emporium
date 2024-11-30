@@ -6,7 +6,7 @@ import logo from "../assets/logo.png"
 
 const Footer = () => {
   return (
-    <div className="bg-footerBg mt-10 pt-4 2xl:mt-[120px] 2xl:pt-[120px]">
+    <div className="bg-footerBg mt-10 md:mt-[60px] lg:mt-[80px] pt-4 2xl:mt-[120px] 2xl:pt-[120px]">
       <div className="flex flex-col md:flex-row md:gap-10 2xl:gap-[100px] 2xl:px-[300px] px-4">
         {/* Left Section */}
         <div className="w-full lg:w-1/2 text-center md:text-left mb-6 lg:mb-0">
