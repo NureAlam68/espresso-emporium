@@ -17,13 +17,13 @@ const Navbar = () => {
   
   </>
   return (
-    <div className="bg-navBg navbar 2xl:px-10 h-[120px] flex justify-center items-center">
+    <div className="bg-navBg navbar justify-between md:px-10 2xl:px-10 h-[120px] items-center">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
+          className="h-8 w-8 text-[#D2B48C]"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor">
@@ -36,7 +36,7 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-white font-raleway text-[20px]">
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-[#422c0f] font-raleway text-[20px]">
         {links}
         
       </ul>
@@ -46,12 +46,12 @@ const Navbar = () => {
           <img src={navLogo} className="w-[75px] h-[90px]" alt="" />
         </div>
         <div>
-            <h1 className="text-[40px] lg:text-[60px] font-rancho text-white">Espresso Emporium</h1>
+            <h1 className="text-[20px] md:text-[30px] lg:text-[35px] 2xl:text-[60px] font-rancho text-white">Espresso Emporium</h1>
         </div>
       </div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal  px-1 text-white font-raleway text-[20px]">
+    <ul className="menu menu-horizontal px-1 text-white font-raleway text-[20px]">
       {links}
     </ul>
   </div>
