@@ -27,6 +27,23 @@ const Login = () => {
             setUser(res.user)
             e.target.reset()
             navigate(location?.state ? location.state : "/")
+
+            // update last login time
+            const lastSignInTime = res?.user?.metadata?.lastSignInTime;
+            
+            const loginInfo = { email, lastSignInTime};
+
+            fetch(`http://localhost:5000/users`, {
+              method: 'PATCH',
+              headers: {
+                "content-type": "application/json"
+              },
+              body: JSON.stringify(loginInfo)
+            })
+            .then(res => res.json())
+            .then(data => {
+              console.log('login user update', data)
+            })
         })
         .catch((error) => {
             Swal.fire("Incorrect email or password! Please try again:" + error.message)
