@@ -1,13 +1,25 @@
+import { useEffect } from "react";
 import badge from "../assets/aboutBadge.png";
 import coffee from "../assets/aboutCoffee.png";
 import cup from "../assets/aboutCup.png";
 import pot from "../assets/aboutPot.png";
+import AOS from 'aos';
 
 const About = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, 
+      once: true, 
+      offset: 120, 
+    });
+
+    
+    return () => AOS.refresh();
+  }, []);
   return (
     <div className="bg-[#ECEAE3] 2xl:h-[300px]">
       <div className="grid md:grid-cols-2 lg:grid-cols-4 px-5 py-5 2xl:px-[300px] 2xl:py-[55px] gap-10">
-      <div className="h-[190px] lg:h-full w-[300px] lg:w-[230px] xl:w-[300px] mx-auto">
+      <div className="h-[190px] lg:h-full w-[300px] lg:w-[230px] xl:w-[300px] mx-auto" data-aos="zoom-in-up">
         <div className="flex justify-center md:justify-start">
           <img src={cup} alt="" />
         </div>
@@ -18,7 +30,7 @@ const About = () => {
           You will definitely be a fan of the design & aroma of your coffee
         </p>
       </div>
-      <div className="h-[190px] w-[300px] lg:w-[230px] xl:w-[300px] mx-auto">
+      <div className="h-[190px] w-[300px] lg:w-[230px] xl:w-[300px] mx-auto" data-aos="zoom-in-up">
         <div className="flex justify-center md:justify-start">
           <img src={badge} alt="" />
         </div>
@@ -29,7 +41,7 @@ const About = () => {
           We served the coffee to you maintaining the best quality
         </p>
       </div>
-      <div className="h-[190px] w-[300px] lg:w-[230px] xl:w-[300px] mx-auto">
+      <div className="h-[190px] w-[300px] lg:w-[230px] xl:w-[300px] mx-auto" data-aos="zoom-in-up">
         <div className="flex justify-center md:justify-start">
           <img src={coffee} alt="" />
         </div>
@@ -40,7 +52,7 @@ const About = () => {
         The coffee is made of the green coffee beans which you will love
         </p>
       </div>
-      <div className="h-[190px] w-[300px] lg:w-[230px] xl:w-[300px] mx-auto">
+      <div className="h-[190px] w-[300px] lg:w-[230px] xl:w-[300px] mx-auto" data-aos="zoom-in-up">
         <div className="flex justify-center md:justify-start">
           <img src={pot} alt="" />
         </div>

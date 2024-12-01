@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { FaCoffee } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CoffeeCard from "./CoffeeCard";
+import AOS from 'aos';
 
 const PopularProduct = () => {
 
@@ -13,6 +14,16 @@ const PopularProduct = () => {
     .then(data => setCoffees(data))
   }, [])
 
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, 
+      once: true, 
+      offset: 120, 
+    });
+
+    
+    return () => AOS.refresh();
+  }, []);
   return (
     <div className="bg-popularBg bg-cover bg-center mt-10 2xl:mt-[120px] px-4 md:px-[100px] lg:px-[20px] 2xl:px-[300px]">
       <div>
@@ -24,7 +35,7 @@ const PopularProduct = () => {
         </h1>
         <div className="flex justify-center">
         <Link to="/addCoffee">
-          <button className="flex items-center justify-center gap-2 px-6 py-3 bg-[#E3B577] border-2 border-[#331A15] text-white font-bold text-lg rounded-lg shadow-md">
+          <button className="flex items-center justify-center gap-2 px-6 py-3 bg-[#E3B577] border-2 border-[#331A15] text-white font-bold text-lg rounded-lg shadow-md" data-aos="flip-left">
             <p className="font-rancho text-[24px] font-normal">Add Coffee</p>
             <FaCoffee className="text-xl text-[#331A15]" />
           </button>

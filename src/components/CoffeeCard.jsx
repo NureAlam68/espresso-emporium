@@ -3,6 +3,8 @@ import { IoEyeSharp } from "react-icons/io5";
 import { MdDelete, MdModeEditOutline } from "react-icons/md";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import AOS from 'aos';
+import { useEffect } from "react";
 
 
 const CoffeeCard = ({coffee, coffees, setCoffees}) => {
@@ -43,8 +45,18 @@ const CoffeeCard = ({coffee, coffees, setCoffees}) => {
           });
     }
 
+    useEffect(() => {
+        AOS.init({
+          duration: 2000, 
+          once: true, 
+          offset: 120, 
+        });
+    
+        
+        return () => AOS.refresh();
+      }, []);
     return (
-        <div className="p-8 bg-[#F5F4F1] rounded-[10px] w-[100%] 2xl:h-[300px] flex items-center justify-center md:justify-between flex-col gap-4 md:flex-row">
+        <div className="p-8 bg-[#F5F4F1] rounded-[10px] w-[100%] 2xl:h-[300px] flex items-center justify-center md:justify-between flex-col gap-4 md:flex-row" data-aos="zoom-in-up">
             <div className="w-[185px] h-[240px]">
             <img src={photo} className="h-full w-full" alt="" />
             </div>

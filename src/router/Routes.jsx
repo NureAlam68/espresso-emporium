@@ -7,6 +7,7 @@ import CoffeeDetails from "../pages/CoffeeDetails";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import Users from "../pages/Users";
+import PrivetRoute from "./PrivetRoute";
 
 
 
@@ -22,7 +23,7 @@ const router = createBrowserRouter([
             },
             {
                 path: "/addCoffee",
-                element: <AddCoffee></AddCoffee>
+                element: <PrivetRoute><AddCoffee></AddCoffee></PrivetRoute>
             },
             {
                 path: "/updateCoffee/:id",
@@ -44,7 +45,7 @@ const router = createBrowserRouter([
               },
               {
                 path: "/users",
-                element: <Users></Users>,
+                element: <PrivetRoute><Users></Users></PrivetRoute>,
                 loader: () => fetch('http://localhost:5000/users')
               }
         ]
