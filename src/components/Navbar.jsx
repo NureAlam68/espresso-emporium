@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import navLogo from "../assets/logo.png";
 import { FaRegUserCircle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import "./Navbar.css"
 
 const Navbar = () => {
 
@@ -10,8 +11,9 @@ const Navbar = () => {
 
   const links = <>
   
-  <li><a>Add More</a></li>
-  <li><a>Login</a></li>
+  <li><NavLink to="/">Home</NavLink></li>
+  <li><NavLink to="/addCoffee">Add Coffee</NavLink></li>
+  <li><NavLink to="/login">Login</NavLink></li>
   
   </>
   return (
@@ -34,7 +36,7 @@ const Navbar = () => {
       </div>
       <ul
         tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-white font-rancho text-[20px]">
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow text-white font-raleway text-[20px]">
         {links}
         
       </ul>
@@ -49,16 +51,16 @@ const Navbar = () => {
       </div>
   </div>
   <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1 text-white font-rancho text-[20px]">
+    <ul className="menu menu-horizontal  px-1 text-white font-raleway text-[20px]">
       {links}
     </ul>
   </div>
   <div className="navbar-end">
   {
-          user ?  <img className="h-11 w-11 border border-sky-400 rounded-full object-cover object-center" src={user?.photoURL} alt="" /> : <FaRegUserCircle size={45}/>
+          user ?  <img className="h-11 w-11 border border-sky-400 rounded-full object-cover object-center" src={user?.photoURL} alt="" /> : <FaRegUserCircle className="text-[#D2B48C]" size={45}/>
         }
         {
-          user ? <Link to="/" onClick={logOut} className="px-5 py-2 md:px-[22px] md:py-[11px] rounded-[16px] bg-sky-300 text-black font-bold ml-3">Log Out</Link> : <Link to="/login" className="px-5 py-2 md:px-[22px] md:py-[11px] rounded-[16px] bg-sky-300 text-black font-bold ml-3">Login</Link>
+          user ? <Link to="/" onClick={logOut} className="font-raleway px-5 py-2 md:px-[22px] md:py-[11px] rounded-[10px] bg-[#D2B48C] text-black font-bold ml-3">Log Out</Link> : <Link to="/login" className="font-raleway px-5 py-2 md:px-[22px] md:py-[11px] rounded-[10px] bg-[#D2B48C] text-black font-bold ml-3">Login</Link>
         }
   </div>
 
