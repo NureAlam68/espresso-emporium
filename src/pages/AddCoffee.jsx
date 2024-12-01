@@ -51,7 +51,7 @@ const AddCoffee = () => {
 
   return (
     <div className="2xl:px-[300px] mt-6 md:mt-[50px] bg-addCoffeeBg bg-cover bg-center">
-        <button onClick={handleNavigate} className="flex items-center gap-3 ml-4"><BsArrowLeftCircleFill className="text-[30px]"/> <p className="font-rancho text-[30px] text-[#374151]">Back to home</p></button>
+        <button onClick={handleNavigate} className="flex items-center gap-3 ml-4 hover:bg-[#D2B48C] px-3 py-2 rounded-[10px]"><BsArrowLeftCircleFill className="text-[30px]"/> <p className="font-rancho text-[30px] text-[#374151]">Back to home</p></button>
       <div className="bg-[#F4F3F0] rounded-[5px] mt-6 md:mt-[50px] py-10 lg:py-[70px] px-4 lg:px-10 2xl:px-[112px]">
         <h1 className="font-rancho text-[30px] md:text-[45px] font-normal text-[#374151] text-center">Add New Coffee</h1>
         <p className="font-raleway mt-5 md:mt-8 text-[#1B1A1AB3] md:text-[18px] md:w-[80%] mx-auto text-center font-normal">
