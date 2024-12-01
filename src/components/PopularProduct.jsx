@@ -2,26 +2,24 @@ import { useEffect, useState } from "react";
 import { FaCoffee } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import CoffeeCard from "./CoffeeCard";
-import AOS from 'aos';
+import AOS from "aos";
 
 const PopularProduct = () => {
-
   const [coffees, setCoffees] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/coffee')
-    .then(res => res.json())
-    .then(data => setCoffees(data))
-  }, [])
+    fetch("https://espresso-emporium-server-ashy.vercel.app/coffee")
+      .then((res) => res.json())
+      .then((data) => setCoffees(data));
+  }, []);
 
   useEffect(() => {
     AOS.init({
-      duration: 2000, 
-      once: true, 
-      offset: 120, 
+      duration: 2000,
+      once: true,
+      offset: 120,
     });
 
-    
     return () => AOS.refresh();
   }, []);
   return (
@@ -34,17 +32,25 @@ const PopularProduct = () => {
           Our Popular Products
         </h1>
         <div className="flex justify-center">
-        <Link to="/addCoffee">
-          <button className="flex items-center justify-center gap-2 px-6 py-3 bg-[#E3B577] border-2 border-[#331A15] text-white font-bold text-lg rounded-lg shadow-md" data-aos="flip-left">
-            <p className="font-rancho text-[24px] font-normal">Add Coffee</p>
-            <FaCoffee className="text-xl text-[#331A15]" />
-          </button>
-        </Link>
+          <Link to="/addCoffee">
+            <button
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-[#E3B577] border-2 border-[#331A15] text-white font-bold text-lg rounded-lg shadow-md"
+              data-aos="flip-left"
+            >
+              <p className="font-rancho text-[24px] font-normal">Add Coffee</p>
+              <FaCoffee className="text-xl text-[#331A15]" />
+            </button>
+          </Link>
         </div>
         <div className="mt-[48px] grid lg:grid-cols-2 gap-6">
-          {
-            coffees.map(coffee => <CoffeeCard key={coffee._id} coffees={coffees} setCoffees={setCoffees} coffee={coffee}></CoffeeCard>)
-          }
+          {coffees.map((coffee) => (
+            <CoffeeCard
+              key={coffee._id}
+              coffees={coffees}
+              setCoffees={setCoffees}
+              coffee={coffee}
+            ></CoffeeCard>
+          ))}
         </div>
       </div>
     </div>
